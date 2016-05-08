@@ -8,6 +8,60 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="639" Margin="0,1,0,0" >
+
+            <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
+                <StackPanel>
+                    <TextBlock Name="PreviewTitle" Grid.Row="0" Grid.Column="0" Text="Preview"  Height="30" HorizontalAlignment="Center" Margin="0,20,0,0" Visibility="Visible"/>
+                    <Canvas Name="PreviewCanvas" Grid.Row="1" Grid.Column="0" Width="200" Height="200" Background="Gray"  Margin="0,0,0,0" Visibility="Visible">
+                        <CaptureElement x:Name="previewElement" Width="200" Height="200" HorizontalAlignment="Left" Visibility="Visible"/>
+                    </Canvas>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Name="ImageTitle" Grid.Row="0" Grid.Column="1" Text="Last captured photo" Height="30" HorizontalAlignment="Center" Margin="0,20,0,0" Visibility="Visible"/>
+                    <Canvas Name="PhotoCanvas" Grid.Row="1" Grid.Column="1" Width="200" Height="200" Background="Gray"  Margin="20,0,0,0" Visibility="Visible">
+                        <Image x:Name="captureImage" Width="200" Height="200" Visibility="Visible"/>
+                    </Canvas>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="0,0,0,10">
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
+                    <Slider x:Name="AngerSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <TextBox x:Name="AngertextBox" TextWrapping="Wrap" Text="Anger" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
+                    <Slider x:Name="ContemptSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <TextBox x:Name="ContemptTextBox" TextWrapping="Wrap" Text="Contempt" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
+                    <Slider x:Name="DisgustSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <TextBox x:Name="DisgustTextBox" TextWrapping="Wrap" Text="Disgust" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
+                    <Slider x:Name="FearSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <TextBox x:Name="FearTextBox" TextWrapping="Wrap" Text="Fear" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
+                    <Slider x:Name="HappinessSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <TextBox x:Name="HappinessTextBox" TextWrapping="Wrap" Text="Happiness" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
+                    <Slider x:Name="NeutralSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <TextBox x:Name="NeutralTextBox" TextWrapping="Wrap" Text="Neutral" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
+                    <Slider x:Name="SadnessSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <TextBox x:Name="SadnessTextBox" TextWrapping="Wrap" Text="Sadness" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
+                    <Slider x:Name="SurpriseSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <TextBox x:Name="SurpriseTextBox" TextWrapping="Wrap" Text="Surprise" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
+                </StackPanel>
+
+            </StackPanel>
+            <TextBox x:Name="status" TextWrapping="Wrap" Text="Status" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="316"/>
+
+        </StackPanel>
 
     </Grid>
 </Page>
