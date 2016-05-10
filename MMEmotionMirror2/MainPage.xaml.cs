@@ -98,7 +98,7 @@ namespace MMEmotionMirror2
 
         private async Task<Emotion[]> UploadAndDetectEmotions(string imageFilePath)
         {
-            string subscriptionKey = "xxx";
+            string subscriptionKey = "3b86142b9d614d5caa6bce864e0a8a8c";
             EmotionServiceClient emotionServiceClient = new EmotionServiceClient(subscriptionKey);
 
             //            FileStream imageFileStream = File.OpenRead(imageFilePath);
