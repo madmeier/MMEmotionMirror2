@@ -16,6 +16,8 @@ using Windows.UI.Xaml.Media.Imaging;
 
 using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
+using Windows.Devices.Enumeration;
+using Windows.Devices.Enumeration.Pnp;
 
 using Windows.Storage;
 using Windows.Storage.Streams;
@@ -58,6 +60,18 @@ namespace MMEmotionMirror2
 
 
 
+        }
+
+        private static async Task<DeviceInformation> FindCameraDeviceByPanelAsync(Windows.Devices.Enumeration.Panel desiredPanel)
+        {
+            // Get available devices for capturing pictures
+            var allVideoDevices = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
+
+            // Get the desired camera by panel
+            DeviceInformation desiredDevice = allVideoDevices.FirstOrDefault(x => x.EnclosureLocation != null && x.EnclosureLocation.Panel == desiredPanel);
+
+            // If there is no device mounted on the desired panel, return the first device found
+            return desiredDevice ?? allVideoDevices.FirstOrDefault();
         }
 
         /// <summary>
@@ -260,8 +274,6 @@ namespace MMEmotionMirror2
             {
             }
         }
-
-
 
 
 
