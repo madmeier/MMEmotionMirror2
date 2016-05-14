@@ -42,6 +42,18 @@ namespace MMEmotionMirror2
         private readonly string PHOTO_FILE_NAME = "photo.jpg";
         private DispatcherTimer timer;
 
+        private const int showsAnger = 0;
+        private const int showsContempt = 1;
+        private const int showsDisgust = 2;
+        private const int showsFear = 3;
+        private const int showsHappyiness = 4;
+        private const int showsNeutrality = 5;
+        private const int showsSadness = 6;
+        private const int showsSurprise = 7;
+
+        private SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
+        private SolidColorBrush whiteBrush = new SolidColorBrush(Windows.UI.Colors.White);
+        private Windows.UI.Xaml.Shapes.Ellipse[] emotionLights = new Windows.UI.Xaml.Shapes.Ellipse[8];
 
 
 
@@ -58,10 +70,23 @@ namespace MMEmotionMirror2
             timer.Tick += takePhoto;
             timer.Start();
 
+            emotionLights[showsAnger] = AngerLight;
+            emotionLights[showsContempt] = ContemptLight;
+            emotionLights[showsDisgust] = DisgustLight;
+            emotionLights[showsFear] = FearLight;
+            emotionLights[showsHappyiness] = HappinessLight;
+            emotionLights[showsNeutrality] = NeutralLight;
+            emotionLights[showsSadness] = SadnessLight;
+            emotionLights[showsSurprise] = SurpriseLight;
 
 
         }
 
+        /// <summary>
+        /// For an extension ...
+        /// </summary>
+        /// <param name="desiredPanel"></param>
+        /// <returns></returns>
         private static async Task<DeviceInformation> FindCameraDeviceByPanelAsync(Windows.Devices.Enumeration.Panel desiredPanel)
         {
             // Get available devices for capturing pictures
@@ -174,6 +199,10 @@ namespace MMEmotionMirror2
 
                 Emotion[] emotionResult = await UploadAndDetectEmotions(photoFile.Path);
 
+                for (int i = 0; i < 8; i++)
+                {
+                     emotionLights[i].Fill = whiteBrush;
+                }
 
                 int emotionResultCount = 0;
  
@@ -190,61 +219,62 @@ namespace MMEmotionMirror2
                         if (emotion.Scores.Anger > maxEmotion)
                         {
                             maxEmotion = emotion.Scores.Anger;
-                            maxEmotionType = 0;
+                            maxEmotionType = showsAnger;
                         }
 
                         ContemptSlide.Value = 100 * emotion.Scores.Contempt;
                         if (emotion.Scores.Contempt > maxEmotion)
                         {
                             maxEmotion = emotion.Scores.Contempt;
-                            maxEmotionType = 1;
+                            maxEmotionType = showsContempt;
                         }
 
                         DisgustSlide.Value = 100 * emotion.Scores.Disgust;
                         if (emotion.Scores.Disgust > maxEmotion)
                         {
                             maxEmotion = emotion.Scores.Disgust;
-                            maxEmotionType = 2;
+                            maxEmotionType = showsDisgust;
                         }
 
                         FearSlide.Value = 100 * emotion.Scores.Fear;
                         if (emotion.Scores.Fear > maxEmotion)
                         {
                             maxEmotion = emotion.Scores.Fear;
-                            maxEmotionType = 3;
+                            maxEmotionType = showsFear;
                         }
 
                         HappinessSlide.Value = 100 * emotion.Scores.Happiness;
                         if (emotion.Scores.Happiness > maxEmotion)
                         {
                             maxEmotion = emotion.Scores.Happiness;
-                            maxEmotionType = 4;
+                            maxEmotionType = showsHappyiness;
                         }
 
                         NeutralSlide.Value = 100 * emotion.Scores.Neutral;
                         if (emotion.Scores.Neutral > maxEmotion)
                         {
                             maxEmotion = emotion.Scores.Neutral;
-                            maxEmotionType = 5;
+                            maxEmotionType = showsNeutrality;
                         }
 
                         SadnessSlide.Value = 100 * emotion.Scores.Sadness;
                         if (emotion.Scores.Sadness > maxEmotion)
                         {
                             maxEmotion = emotion.Scores.Sadness;
-                            maxEmotionType = 6;
+                            maxEmotionType = showsSadness;
                         }
 
                         SurpriseSlide.Value = 100 * emotion.Scores.Surprise;
                         if (emotion.Scores.Surprise > maxEmotion)
                         {
                             maxEmotion = emotion.Scores.Surprise;
-                            maxEmotionType = 7;
+                            maxEmotionType = showsSurprise;
                         }
 
                         emotionResultCount++;
 
                         status.Text = "max = " + maxEmotion + " at " + maxEmotionType;
+                        emotionLights[maxEmotionType].Fill = blueBrush;
 
                     }
 

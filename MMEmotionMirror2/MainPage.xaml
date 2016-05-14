@@ -8,7 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="684" Margin="0,1,0,-45" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="128*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="684" Margin="0,-17,0,-27" Grid.RowSpan="2" >
 
             <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
                 <StackPanel>
@@ -27,34 +31,42 @@
             <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="0,0,0,10">
                 <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
                     <Slider x:Name="AngerSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <Ellipse x:Name="AngerLight" Fill="#FFF4F4F5" Height="14" Stroke="Black" Width="21"/>
                     <TextBox x:Name="AngertextBox" TextWrapping="Wrap" Text="Anger" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
-                </StackPanel>
+                 </StackPanel>
                 <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
                     <Slider x:Name="ContemptSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <Ellipse x:Name="ContemptLight" Fill="#FFF4F4F5" Height="14" Stroke="Black" Width="21"/>
                     <TextBox x:Name="ContemptTextBox" TextWrapping="Wrap" Text="Contempt" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
                 </StackPanel>
                 <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
                     <Slider x:Name="DisgustSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <Ellipse x:Name="DisgustLight" Fill="#FFF4F4F5" Height="14" Stroke="Black" Width="21"/>
                     <TextBox x:Name="DisgustTextBox" TextWrapping="Wrap" Text="Disgust" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
                 </StackPanel>
                 <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
                     <Slider x:Name="FearSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <Ellipse x:Name="FearLight" Fill="#FFF4F4F5" Height="14" Stroke="Black" Width="21"/>
                     <TextBox x:Name="FearTextBox" TextWrapping="Wrap" Text="Fear" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
                 </StackPanel>
                 <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
                     <Slider x:Name="HappinessSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <Ellipse x:Name="HappinessLight" Fill="#FFF4F4F5" Height="14" Stroke="Black" Width="21"/>
                     <TextBox x:Name="HappinessTextBox" TextWrapping="Wrap" Text="Happiness" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
                 </StackPanel>
                 <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
                     <Slider x:Name="NeutralSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <Ellipse x:Name="NeutralLight" Fill="#FFF4F4F5" Height="14" Stroke="Black" Width="21"/>
                     <TextBox x:Name="NeutralTextBox" TextWrapping="Wrap" Text="Neutral" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
                 </StackPanel>
                 <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
                     <Slider x:Name="SadnessSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <Ellipse x:Name="SadnessLight" Fill="#FFF4F4F5" Height="14" Stroke="Black" Width="21"/>
                     <TextBox x:Name="SadnessTextBox" TextWrapping="Wrap" Text="Sadness" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
                 </StackPanel>
                 <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
                     <Slider x:Name="SurpriseSlide" Orientation="Horizontal" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200" Height="20"/>
+                    <Ellipse x:Name="SurpriseLight" Fill="#FFF4F4F5" Height="14" Stroke="Black" Width="21"/>
                     <TextBox x:Name="SurpriseTextBox" TextWrapping="Wrap" Text="Surprise" Margin="10,0,0,0" BorderThickness="0" IsReadOnly="True" Width="100"/>
                 </StackPanel>
 
